@@ -1,0 +1,104 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(#011, #445820);
+  color: #fff;
+  display: grid;
+  grid-template:
+    "game score"
+    "game bonus"
+    "game ."
+    "game .";
+  grid-template-columns: 4fr 1fr;
+  gap: 1em;
+  min-height: 100%;
+  margin: 1em 10%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.block {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  padding: 1em;
+}
+
+#cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 2em;
+  gap: 1em;
+  width: 80%;
+  justify-self: center;
+  grid-area: game;
+}
+
+#cards-grid.disabled {
+  filter: brightness(50%);
+}
+
+#intro {
+  grid-area: game;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start {
+  font-size: 2em;
+}
+
+.card {
+  transition: box-shadow 0.5s;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100% 100% 0 0;
+}
+
+.card.hint {
+  box-shadow: aqua 0 0 0.5em 0.5em;
+}
+
+#score-block {
+  font-size: 1.5em;
+  grid-area: score;
+}
+
+#bonus {
+  grid-area: bonus;
+}
+
+button {
+  color: #000;
+  padding: 1em;
+  background-color: #8cb641;
+  border-radius: 1em;
+  border: 0.2em solid #fff;
+}
+
+button:disabled {
+  background-color: #445820;
+  color: #999;
+  border-color: #999;
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    grid-template:
+      "score"
+      "bonus"
+      "game";
+    margin: 1em 2em;
+  }
+
+  #intro,
+  #cards-grid {
+    width: 100%;
+    padding: 1em;
+  }
+}

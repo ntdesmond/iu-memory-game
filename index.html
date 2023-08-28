@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <!-- Feature 1: start button -->
+    <div id="intro">
+      <button id="start">Start the game!</button>
+    </div>
+
+    <div id="cards-grid" class="block disabled"></div>
+    <div id="score-block" class="block">Score: <span id="score">0</span></div>
+
+    <!-- Feature 2: bonuses (hints) -->
+    <div id="bonus" class="block">
+      Bonus (<span id="bonus-count">3</span> remaining):
+      <button id="bonus-toggle" disabled>See a hint</button>
+    </div>
+
+    <!-- I prefer placing the script at the end to avoid listening for content being loaded -->
+    <script src="game.js"></script>
+  </body>
+</html>
